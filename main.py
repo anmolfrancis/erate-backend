@@ -11,6 +11,12 @@ from datetime import datetime, timedelta
 from collections import defaultdict  # ✅ Correctly moved to top
 
 app = FastAPI()
+
+# ✅ Welcome route
+@app.get("/")
+async def welcome():
+    return {"message": "Welcome to Erate by Anmol Francis"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allow all websites (for now)
